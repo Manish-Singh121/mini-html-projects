@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Clock Using javascript</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<style>
+		body {
+			background-color: paleturquoise;
+		}
+
+		h1 {
+			color: rebeccapurple;
+			text-align: center;
+			font-size: 250%;
+			text-decoration: underline;
+			text-decoration-color: royalblue;
+		}
+
+		#clock {
+			position: relative;
+			margin: auto;
+			height: 30vw;
+			width: 30vw;
+			background: url(clock.png) no-repeat;
+			background-size: 100%;
+		}
+
+		#hour {
+			position: absolute;
+			background: black;
+			border-radius: 10px;
+			transform-origin: bottom;
+			width: 1.8%;
+			height: 25%;
+			top: 25%;
+			left: 48.85%;
+		}
+
+		#minute {
+			position: absolute;
+			background: black;
+			border-radius: 10px;
+			transform-origin: bottom;
+			width: 1.4%;
+			height: 30%;
+			top: 19%;
+			left: 48.9%;
+		}
+
+		#second {
+			position: absolute;
+			background: black;
+			border-radius: 10px;
+			transform-origin: bottom;
+			width: 1%;
+			height: 38%;
+			top: 9%;
+			left: 49.25%;
+		}
+	</style>
+	<body>
+		<h1>Clock Using javascript</h1>
+		<div id="clock">
+			<div id="hour"></div>
+			<div id="minute"></div>
+			<div id="second"></div>
+		</div>
+	</body>
+	<script>
+		function updateTime() {
+			now = new Date();
+			hours = now.getHours();
+			minutes = now.getMinutes();
+			seconds = now.getSeconds();
+			hrotation = 30 * hours + minutes / 2;
+			mrotation = 6 * minutes;
+			srotation = 6 * seconds;
+
+			hour.style.transform = `rotate(${hrotation}deg)`;
+			minute.style.transform = `rotate(${mrotation}deg)`;
+			second.style.transform = `rotate(${srotation}deg)`;
+		}
+
+		setInterval(updateTime, 1000);
+	</script>
+</html>

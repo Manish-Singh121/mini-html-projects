@@ -1,0 +1,111 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: #34495e;
+}
+h2 {
+	text-align: center;
+	color: red;
+	font-size: 300%;
+	text-decoration: underline;
+}
+.box {
+	padding: 40px;
+	width: 50%;
+	height: auto;
+	margin: auto;
+	text-align: center;
+}
+.box fieldset {
+	background: #191919;
+}
+.box legend {
+	font-size: 300%;
+	color: greenyellow;
+	text-align: center;
+}
+.box label {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 150%;
+	padding: 20px;
+}
+.box input {
+	border: 2px solid #3498db;
+	font-size: 150%;
+	padding: 15px;
+	background: none;
+	width: 200px;
+	margin: 20px auto;
+	text-align: center;
+	color: cyan;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+.box input:hover,
+.box input:focus {
+	width: 280px;
+	border-color: #2ecc71;
+	color: #2ecc71;
+}
+.box input[type="submit"] {
+	border: 2px solid #2ecc71;
+	padding: 15px 40px;
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+	color: greenyellow;
+}
+.box input[type="submit"]:hover {
+	background: #2ecc71;
+	color: greenyellow;
+}
+.box .option {
+	color: #3498db;
+	margin: auto;
+	padding: 5px;
+}
+.box .option:hover,
+.box .option:focus {
+	width: 250px;
+	color: #2ecc71;
+	cursor: grab;
+}
+.box input:checked + label {
+	font-weight: bold;
+	color: greenyellow;
+}
+.box .row {
+	margin: 20px;
+}
+.error {
+	color: brown;
+	font-size: 150%;
+	font-weight: 600;
+}
+.box textarea {
+	background: slategray;
+	border: 2px solid #3498db;
+	color: cyan;
+	font-size: 150%;
+	width: 90%;
+	height: auto;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+.box textarea:hover,
+.box textarea:focus {
+	color: #2ecc71;
+	font-size: 150%;
+	width: 95%;
+	height: auto;
+	border: 2px solid #2ecc71;
+	border-radius: 24px;
+	transition: 0.25s;
+}

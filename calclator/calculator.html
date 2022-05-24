@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>A Simple Calculator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<style>
+		body {
+			background-color: antiquewhite;
+		}
+		#calc {
+			width: 560px;
+			height: 300px;
+			margin: auto;
+			background-color: #57267c;
+		}
+		td {
+			height: 50px;
+			width: 70px;
+		}
+		#btn {
+			background-color: #3c0266;
+			color: white;
+			border: solid black 0.5px;
+			width: 100%;
+			border-radius: 5px;
+			height: 70%;
+			outline: none;
+			font-size: 20px;
+		}
+		#title {
+			text-align: center;
+			text-decoration: underline;
+			color: red;
+		}
+		#display {
+			text-align: right;
+			background-color: white;
+			border: solid black 0.5px;
+			color: black;
+			border-radius: 5px;
+			width: 98%;
+			height: 90%;
+			font-size: large;
+		}
+		#button:hover {
+			background: #e5e5e5;
+			box-shadow: inset 0px 0px 5px #c1c1c1;
+		}
+	</style>
+	<body>
+		<div class="content">
+			<h1 id="title">Calculator</h1>
+			<br />
+			<form name="calc">
+				<table id="calc" border="2">
+					<tr>
+						<td colspan="8">
+							<input
+								id="display"
+								name="display"
+								type="text"
+								placeholder="0"
+								disabled
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="sin"
+								OnClick="sin(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="log2"
+								OnClick="log2(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="%"
+								OnClick="addChar(this.form, '%')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="MC"
+								OnClick="mc(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="("
+								OnClick="addChar(this.form, '(')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value=")"
+								OnClick="addChar(this.form, ')')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="C"
+								OnClick="calc.display.value=''"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="<-"
+								OnClick="deleteChar(this.form)"
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="cos"
+								OnClick="cos(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="e"
+								OnClick="addChar(this.form, Math.E)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="pi"
+								OnClick="addChar(this.form, Math.PI)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="MR"
+								OnClick="mr(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="7"
+								OnClick="addChar(this.form, '7')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="8"
+								OnClick="addChar(this.form, '8')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="9"
+								OnClick="addChar(this.form, '9')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="/"
+								OnClick="addChar(this.form, '/')"
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="tan"
+								OnClick="tan(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="log"
+								OnClick="log(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="ln"
+								OnClick="ln(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="MS"
+								OnClick="ms(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="4"
+								OnClick="addChar(this.form, '4')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="5"
+								OnClick="addChar(this.form, '5')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="6"
+								OnClick="addChar(this.form, '6')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="x"
+								OnClick="addChar(this.form, '*')"
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="x!"
+								OnClick="factorial(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="x^n"
+								OnClick="addChar(this.form, '**')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="x^2"
+								OnClick="x2(form)"
+							/>
+						</td>
+
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="M+"
+								OnClick="mPlus(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="1"
+								OnClick="addChar(this.form, '1')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="2"
+								OnClick="addChar(this.form, '2')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="3"
+								OnClick="addChar(this.form, '3')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="-"
+								OnClick="addChar(this.form, '-')"
+							/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="Exp"
+								OnClick="exp(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="√"
+								OnClick="sqrt(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="1/x"
+								OnClick="m_inverse(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="±"
+								OnClick="changeSign(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="."
+								OnClick="addChar(this.form, '.')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="0"
+								OnClick="addChar(this.form, '0')"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="="
+								OnClick="compute(this.form)"
+							/>
+						</td>
+						<td>
+							<input
+								id="btn"
+								type="button"
+								value="+"
+								OnClick="addChar(this.form, '+')"
+							/>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+	<script src="calculator.js"></script>
+</html>

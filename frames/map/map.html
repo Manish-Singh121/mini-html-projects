@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Image Map Hotspot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    div {
+      margin: 5px;
+      padding: 5px;
+    }
+
+    body {
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: "Courier New", monospace;
+    }
+
+    h1 {
+      color: red;
+      background-color: palegreen;
+      text-align: center;
+      font-size: 200%;
+    }
+
+    h3 {
+      color: red;
+      background-color: palegreen;
+      text-align: center;
+    }
+
+    img {
+      margin-left: 5%;
+    }
+  </style>
+  <body>
+    <div>
+      <h1>The map and area elements</h1>
+      <h3>
+        Click on the state on map to get more information about that State:
+      </h3>
+    </div>
+    <div>
+      <img src="india.jpg" alt="india map" usemap="#india_map" />
+      <map name="india_map">
+        <area
+          shape="poly"
+          coords="166,224,181,227,198,230,211,233,228,230,242,215,242,201,235,189,223,174,212,164,208,155,192,168,186,175,189,194,175,208"
+          alt="Punjab"
+          href="https://en.wikipedia.org/wiki/Punjab"
+          target="_blank"
+        />
+
+        <area shape="poly"
+        coords="584,339,592,326,575,318,563,312,547,311,545,321,542,340,538,346,538,367,538,381,534,398,516,409,503,415,487,425,504,436,511,449,518,460,526,470,535,474,543,465,547,459,552,464,555,469,567,457,569,442,571,427,564,416,564,406,559,395,548,386,552,375,564,366,562,357,551,352,548,339,558,331,567,335,576,340,589,335""
+        alt="West Bengal" href="https://en.wikipedia.org/wiki/West_Bengal"
+        target="_blank" />
+
+        <area
+          shape="poly"
+          coords="78,394,88,387,107,387,118,388,129,392,141,395,147,409,156,420,163,425,171,435,171,449,167,456,163,466,167,477,161,483,156,489,156,504,146,512,135,513,129,507,130,492,130,477,127,463,133,454,118,457,118,469,111,480,99,489,84,494,72,492,63,489,55,480,48,473,36,459,33,449,43,450,55,444,66,439,73,434,76,424,69,427,58,432,47,434,39,432,30,428,23,417,21,408,28,394,42,394,56,394,64,393"
+          alt="Gujarat"
+          href="https://en.wikipedia.org/wiki/Gujarat"
+          target="_blank"
+        />
+
+        <area
+          shape="poly"
+          coords="336,716,326,716,314,719,301,723,290,732,279,734,268,732,261,738,257,746,262,752,255,760,246,760,235,763,227,766,234,779,237,788,243,803,246,810,252,821,251,833,246,845,246,854,249,863,264,863,273,857,275,843,286,836,293,833,294,824,303,816,306,806,315,803,321,800,324,793,320,777,316,755,323,752,333,743,334,731,316,767"
+          alt="Tamil Naidu"
+          href="https://en.wikipedia.org/wiki/Tamil_Nadu"
+          target="_blank"
+        />
+      </map>
+    </div>
+  </body>
+</html>
